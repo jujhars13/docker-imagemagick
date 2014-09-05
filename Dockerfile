@@ -9,9 +9,7 @@ RUN echo "LANG=\"en_GB.UTF-8\"" > /etc/default/locale
 RUN locale-gen en_GB.UTF-8
 RUN dpkg-reconfigure locales
 
-# forget the update, takes too long and we don't really need it for imagemagick
-#RUN apt-get update
-
+RUN apt-get update
 RUN apt-get install -y \
     wget \
     imagemagick 
